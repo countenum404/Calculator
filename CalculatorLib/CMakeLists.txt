@@ -12,16 +12,19 @@ set_target_properties(CalculatorLib PROPERTIES
     SOVERSION 1
 )
 
+target_include_directories(CalculatorLib PUBLIC 
+    "${CMAKE_CURRENT_SOURCE_DIR}/include"
+)
+
+install(DIRECTORY include/ DESTINATION include
+    FILES_MATCHING PATTERN "*.h"
+)
+
 install(TARGETS CalculatorLib
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
     INCLUDES DESTINATION include
-)
-install(DIRECTORY include/ DESTINATION include)
-
-target_include_directories(CalculatorLib PUBLIC 
-    "${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
