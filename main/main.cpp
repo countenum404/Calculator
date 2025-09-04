@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "Calculator.h"
+#include "calculator.h"
 
 
 class IApp {
